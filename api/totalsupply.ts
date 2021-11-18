@@ -5,7 +5,7 @@ export default async (req: NowRequest, res: NowResponse): Promise<void> => {
   let totalSupply = await getTotalSupply();
   totalSupply = totalSupply.div(1e18);
 
-  res(
-    totalSupply.toNumber().toFormat(0),
-  );
+  res.json({
+    totalSupply.toNumber(),
+});
 };
