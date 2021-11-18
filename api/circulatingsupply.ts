@@ -10,7 +10,7 @@ export default async (req: NowRequest, res: NowResponse): Promise<void> => {
 
   const circulatingSupply = totalSupply.minus(burnedSupply);
 
-  res.json({
-    circulatingSupply: circulatingSupply.toNumber(),
-  });
+  res(
+    circulatingSupply.toNumber().toFormat(0),
+  );
 };
